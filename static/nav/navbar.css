@@ -1,0 +1,138 @@
+:root {
+    --universal_padding: 0.5rem;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueThin';
+    src: url('/static/resources/helvetica-neue-5/HelveticaNeueThin.otf') format('truetype'); /* Replace 'path/to/font.ttf' with the actual path to your font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General styles for the navbar */
+.navContainer {
+    background-color: #333; /* Background color for the navbar */
+    padding: 10px; /* Padding around the navbar */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    height: 60px;  /* fixed height for the navbar */
+    z-index: 1000; /* navbar is above all other content*/
+}
+
+nav {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between left and right sections */
+    padding-left: 2rem;
+    max-width: 1200px;
+}
+
+.navLeft, .navRight {
+    display: flex; /* Use flexbox for left and right sections */
+    align-items: center; /* Center items vertically */
+}
+
+.navRight a {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 0 15px; /* Padding around links */
+}
+
+.navDivider {
+    height: 25px; /* Height of the divider */
+    width: 1px; /* Width of the divider */
+    background-color: white; /* Color of the divider */
+    opacity: 0.8; /* Opacity of the divider */
+    margin: 0 10px; /* Margin around the divider */
+}
+
+/* Hover effect for links */
+nav a:hover {
+    color: #ffffff;
+}
+
+/*::after creates a pseudo element that is the last child of the selected element
+   - inline by default
+   - adds cosmetic content to an element*/
+
+header::after {
+    content: ''; /*responsible for allowing smooth navbar with no bunching*/
+    display: table !important;
+    clear: both !important;    
+}
+ 
+/* Navigation links */
+nav a {
+    color: rgba(255, 255, 255, 0.668);
+    text-decoration: none;
+    font-family: 'HelveticaNeueThin', sans-serif;
+    font-size: 0.8rem;
+    padding: 22px .8rem;
+    position: relative;  /* Add this for absolute positioning of pseudo-element */
+}
+
+/* this affects the properties of the bottom bar when you hover over the nav links*/
+    nav a::after {
+        content: '';
+        height: 1px;
+        background-color: rgb(255, 255, 255); /* changes text color to white */
+    
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;  /* Start with 0 width */
+    
+        transition: all ease-in-out 150ms; /* speed of bar animation */
+    }
+
+    nav a:hover::after {
+        width: 100%;  /* Expand to full width of the link text */
+    }
+
+/*SEARCH BAR ELEMENTS*/ 
+.searchContainer {
+    display: flex; /* Use flexbox for the search container */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between logo and search bar */
+}
+
+.searchBar {
+    padding: 0.5rem; /* Padding for the search input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    width: 200px; /* Set a width for the search bar */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.searchBar:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.searchButton {
+    padding: 0.5rem 1rem; /* Padding for the button */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 0.5rem; /* Space between input and button */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.searchButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav li {
+        margin-left: 20px; /* Reduce space on smaller screens */
+    }
+    
+    nav li:not(:last-child)::after {
+        right: -10px; /* Adjust position of dividers for smaller screens */
+    }
+}

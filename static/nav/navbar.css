@@ -11,13 +11,13 @@
 
 /* General styles for the navbar */
 .navContainer {
-    background-color: #333; /* Background color for the navbar */
+    background-color: rgb(15,15,15); /* Background color for the navbar */
     padding: 10px; /* Padding around the navbar */
     width: 100%;
     position: fixed;
     top: 0;
     left: 0px;
-    height: 60px;  /* fixed height for the navbar */
+    height: 40px;  /* fixed height for the navbar */
     z-index: 1000; /* navbar is above all other content*/
 }
 
@@ -32,6 +32,8 @@ nav {
 .navLeft, .navRight {
     display: flex; /* Use flexbox for left and right sections */
     align-items: center; /* Center items vertically */
+    padding-left: 15px;
+    padding-right: 30px;
 }
 
 .navRight a {
@@ -45,7 +47,7 @@ nav {
     width: 1px; /* Width of the divider */
     background-color: white; /* Color of the divider */
     opacity: 0.8; /* Opacity of the divider */
-    margin: 0 10px; /* Margin around the divider */
+    margin: 0; /* Margin around the divider */
 }
 
 /* Hover effect for links */
@@ -69,7 +71,7 @@ nav a {
     text-decoration: none;
     font-family: 'HelveticaNeueThin', sans-serif;
     font-size: 0.8rem;
-    padding: 22px .8rem;
+    padding: 13px .8rem;
     position: relative;  /* Add this for absolute positioning of pseudo-element */
 }
 
@@ -81,6 +83,7 @@ nav a {
     
         position: absolute;
         bottom: 0;
+        top: 36px;
         left: 0;
         width: 0%;  /* Start with 0 width */
     
@@ -100,31 +103,25 @@ nav a {
 
 .searchBar {
     padding: 0.5rem; /* Padding for the search input */
-    border: 1px solid #ccc; /* Light gray border */
+    border: 1px solid #9d9d9d; /* Light gray border */
     border-radius: 4px; /* Rounded corners */
-    width: 200px; /* Set a width for the search bar */
+    width: 400px; /* Set a width for the search bar */
     transition: border-color 0.3s; /* Smooth transition for border color */
+    background-color: rgb(255, 255, 255);
+    font-size: 0.8rem;
 }
 
 .searchBar:focus {
-    border-color: #007bff; /* Change border color on focus */
     outline: none; /* Remove default outline */
 }
 
-.searchButton {
-    padding: 0.5rem 1rem; /* Padding for the button */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer */
-    margin-left: 0.5rem; /* Space between input and button */
-    transition: background-color 0.3s; /* Smooth transition for background color */
-}
-
-.searchButton:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
+/* bottom bar separating the navbar from the home page
+.bottomBar {
+    height: 1px; 
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+} */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
